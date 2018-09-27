@@ -13,6 +13,18 @@ import { UserService } from 'src/app/service/user.service';
 import { TodoService } from 'src/app/service/todo.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './components/todo/todo.component';
+
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes : Routes =[
+  {path:"todo", component:TodoComponent},
+  {path:"todoList", children : [ {path:"list", component:TodoListComponent}]},
+  {path:"", component:TodoComponent},
+  {path:"**", component:TodoComponent}
+
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,FormsModule,
-    HttpClientModule
+    HttpClientModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService,TodoService],
   bootstrap: [AppComponent]
