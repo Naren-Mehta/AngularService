@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoComponent } from './components/todo/todo.component';
 
 import {RouterModule, Routes} from '@angular/router';
+import { FormsComponent } from './components/forms/forms.component';
 
 const appRoutes : Routes =[
   {path:"todo", component:TodoComponent},
@@ -33,7 +34,8 @@ const appRoutes : Routes =[
     FooterComponent,
     FirstComponent,
     SecondComponent,
-    TodoComponent
+    TodoComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,FormsModule,
