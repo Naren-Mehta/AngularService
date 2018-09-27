@@ -3,7 +3,8 @@
 <form #f="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" 
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" 
+      placeholder="Email" 
       ngModel required email #email="ngModel">
     </div>
     <div [hidden]="email.valid || email.pristine"
@@ -17,8 +18,8 @@
 
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" name="password" required #password="ngModel"
-      [ngModel] ="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" name="password" required [(ngModel)]="pa" #password="ngModel"
+       class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
 
     <div [hidden]="password.valid || password.pristine"
@@ -28,7 +29,7 @@
 
     <div class="form-group">
         <label for="exampleInputName">name</label>
-        <input type="text" name="name" #name="ngModel" required
+        <input type="text" name="name" #name="ngModel" 
         [ngModel] ="name" class="form-control" id="exampleInputName" placeholder="Name">
       </div>
 
